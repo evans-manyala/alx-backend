@@ -64,7 +64,7 @@ class Server:
         next_page = page + 1 if page < total_pages else None
         prev_page = page - 1 if page > 1 else None
 
-        return {
+        results = {
             "page_size": len(data),
             "page": page,
             "data": data,
@@ -72,3 +72,5 @@ class Server:
             "prev_page": prev_page,
             "total_pages": total_pages
         }
+
+        return results
