@@ -20,7 +20,8 @@ class LRUCache(BaseCaching):
 
     def put(self, key, item):
         """
-        Assign to the dictionary self.cache_data the item value for the key key.
+        Assign to the dictionary self.cache_data
+        the item value for the key key.
         """
         if key is not None and item is not None:
             if key in self.cache_data:
