@@ -2,22 +2,27 @@
 """
 Basic Flask app with Babel for language support.
 
-This app serves a single page with a title and header, supporting multiple languages.
+This app serves a single page with a title and header,
+supporting multiple languages.
 """
 
 from flask import Flask, render_template, request
 from flask_babel import Babel, gettext as _
 
+
 class Config:
     """Configuration for Flask app."""
+
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
 babel = Babel(app)
+
 
 @babel.localeselector
 def get_locale():
@@ -29,17 +34,20 @@ def get_locale():
     Returns:
         str: The best match language.
     """
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
 
-@app.route('/')
+
+@app.route("/")
 def index():
     """
     Render the index page.
-    
+
     Returns:
         str: Rendered HTML content of the index page.
     """
-    return render_template('index.html', title=_('home_title'), header=_('home_header'))
+    return render_template("index.html",
+                           title=_("home_title"), header=_("home_header"))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app.run(debug=True)
