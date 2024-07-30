@@ -23,6 +23,7 @@ app.config.from_object(Config)
 
 babel = Babel(app)
 
+
 @babel.localeselector
 def get_locale():
     """
@@ -33,7 +34,8 @@ def get_locale():
     Returns:
         str: The best match language.
     """
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
+
 
 @app.route("/")
 def index():
