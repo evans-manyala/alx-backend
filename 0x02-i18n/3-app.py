@@ -45,8 +45,9 @@ def index() -> str:
     Returns:
         str: Rendered HTML content of the index page.
     """
-    return render_template('3-index.html',
-                           title=_("home_title"), header=_("home_header"))
+    return render_template(
+        "3-index.html", title=_("home_title"), header=_("home_header")
+    )
 
 
 if __name__ == "__main__":
