@@ -36,13 +36,13 @@ def get_locale():
     Returns:
         str: The best match language.
     """
-    locale = request.args.get("locale")
-    if locale in app.config["LANGUAGES"]:
+    locale = request.args.get('locale')
+    if locale in app.config['LANGUAGES']:
         return locale
-    return request.accept_languages.best_match(app.config["LANGUAGES"])
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-@app.route("/", strict_slashes=False)
+@app.route('/', strict_slashes=False)
 def index() -> str:
     """
     Render the index page.
@@ -50,9 +50,7 @@ def index() -> str:
     Returns:
         str: Rendered HTML content of the index page.
     """
-    return render_template(
-        "4-index.html", title=_("home_title"), header=_("home_header")
-    )
+    return render_template('4-index.html')
 
 
 if __name__ == "__main__":
