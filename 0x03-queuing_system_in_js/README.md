@@ -1,8 +1,8 @@
 # 0x03. Queuing System in JS
 
-# Resources
+## Resources
 
-## Read or watch:
+## Read or watch
 
 - [Redis quick start](https://intranet.alxswe.com/rltoken/bD8ATSAVbine9-zEXenwyw)
 - [Redis client interface](https://intranet.alxswe.com/rltoken/vFJSkoXkIvLqHzQgx8DVcw)
@@ -31,7 +31,7 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 
 ## Required Files for the Project
 
-1.  package.json
+1. package.json
 
           {
           "name": "queuing_system_in_js",
@@ -70,7 +70,7 @@ At the end of this project, you are expected to be able to [explain to anyone](h
           }
           }
 
-2.  .babelrc2
+2. .babelrc2
 
         {
         "presets": [
